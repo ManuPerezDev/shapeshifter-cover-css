@@ -109,7 +109,7 @@ p {
 }
 
 .image {
-    background-image: url("../assets/img/shapeshifter-image.PNG");
+    background-image: url("../assets/img/shapeshifter-image.png");
     background-size: cover;
     width: calc(var(--disc-width) / 2);
     height: calc(var(--disc-height) / 2);
