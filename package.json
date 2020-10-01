@@ -6,7 +6,8 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html -d build --public-url /shapeshifter-cover-css/",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "clean": "rm -rf dist build .cache"
   },
   "keywords": [],
   "author": "",
