@@ -1,8 +1,9 @@
 import {Howl, Howler} from 'howler';
+import audio from '../assets/audio/plastic-brains.mp3'
 
 const disc = document.querySelector('.disc')
 const song = new Howl({
-    src: ['../assets/audio/plastic-brains.mp3']
+    src: [audio]
 })
 
 const moveDisc = () => {
