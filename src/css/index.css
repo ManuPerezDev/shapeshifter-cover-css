@@ -129,11 +129,15 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 2s linear;
     z-index: 1;
 }
 
-.cover:hover + .disc {
+/*.cover:hover + .disc {
+    transform: translateX(calc(var(--disc-width) * -1)) rotate(-80deg);
+}*/
+
+.disc.translate {
+    transition: transform 2s linear;
     transform: translateX(calc(var(--disc-width) * -1)) rotate(-80deg);
 }
 

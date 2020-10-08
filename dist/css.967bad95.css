@@ -109,7 +109,7 @@ p {
 }
 
 .image {
-    background-image: url("/shapeshifter-image.759ec9bb.PNG");
+    background-image: url("/shapeshifter-image.6fba87ec.png");
     background-size: cover;
     width: calc(var(--disc-width) / 2);
     height: calc(var(--disc-height) / 2);
@@ -129,11 +129,15 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 2s linear;
     z-index: 1;
 }
 
-.cover:hover + .disc {
+/*.cover:hover + .disc {
+    transform: translateX(calc(var(--disc-width) * -1)) rotate(-80deg);
+}*/
+
+.disc.translate {
+    transition: transform 2s linear;
     transform: translateX(calc(var(--disc-width) * -1)) rotate(-80deg);
 }
 
