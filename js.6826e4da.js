@@ -5,6 +5,6 @@ var e,t=arguments[3];!function(){"use strict";var n=function(){this.init()};n.pr
 },{}],"ck2U":[function(require,module,exports) {
 module.exports="/shapeshifter-cover-css/plastic-brains.67f1d1f4.mp3";
 },{}],"QvaY":[function(require,module,exports) {
-"use strict";var e=require("howler"),t=require("../assets/audio/plastic-brains.mp3"),r=document.querySelector(".disc"),s=new e.Howl({src:[t]}),i=function(){r.classList.toggle("translate")},c=function(){return s.play()};r.addEventListener("click",i),r.addEventListener("click",c);
+"use strict";var e=require("howler"),s=require("../assets/audio/plastic-brains.mp3"),t=new e.Howl({src:[s]}),a=document.querySelector(".disc"),r=document.querySelector(".cover"),c=function(){a.classList.remove("translate-out"),a.classList.add("translate-in"),t.play()},i=function(){a.classList.remove("translate-in"),a.classList.add("translate-out"),t.pause()};a.addEventListener("click",c),r.addEventListener("click",i);
 },{"howler":"lyKV","../assets/audio/plastic-brains.mp3":"ck2U"}]},{},["QvaY"], null)
-//# sourceMappingURL=/shapeshifter-cover-css/js.6dd4466c.js.map
+//# sourceMappingURL=/shapeshifter-cover-css/js.6826e4da.js.map
