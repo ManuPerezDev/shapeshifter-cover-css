@@ -1,16 +1,24 @@
-import {Howl, Howler} from 'howler';
-import audio from '../assets/audio/plastic-brains.mp3'
+import { Howl, Howler } from 'howler'
 
-const disc = document.querySelector('.disc')
+const audio = require('../assets/audio/plastic-brains.mp3')
 const song = new Howl({
     src: [audio]
 })
 
-const moveDisc = () => {
-    disc.classList.toggle('translate')
+const disc = document.querySelector('.disc')
+const cover = document.querySelector('.cover')
+
+const insertDisc = () => {
+    disc.classList.remove('translate-out')
+    disc.classList.add('translate-in')
+    song.play()
 }
 
-const play = () => song.play()
+const takeOutDisc = () => {
+    disc.classList.remove('translate-in')
+    disc.classList.add('translate-out')
+    song.pause()
+}
 
-disc.addEventListener('click', moveDisc)
-disc.addEventListener('click', play)
+disc.addEventListener('click', insertDisc)
+cover.addEventListener('click', takeOutDisc)

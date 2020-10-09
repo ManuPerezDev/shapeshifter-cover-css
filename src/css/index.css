@@ -132,13 +132,14 @@ p {
     z-index: 1;
 }
 
-/*.cover:hover + .disc {
-    transform: translateX(calc(var(--disc-width) * -1)) rotate(-80deg);
-}*/
-
-.disc.translate {
+.disc.translate-in {
     transition: transform 2s linear;
     transform: translateX(calc(var(--disc-width) * -1)) rotate(-80deg);
+}
+
+.disc.translate-out {
+    transition: transform 2s linear;
+    transform: translateX(0) rotate(80deg);
 }
 
 .line {
