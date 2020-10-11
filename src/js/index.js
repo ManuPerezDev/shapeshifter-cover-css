@@ -7,16 +7,22 @@ const song = new Howl({
 
 const disc = document.querySelector('.disc')
 const cover = document.querySelector('.cover')
+const border = document.querySelectorAll('.border')
 
 const insertDisc = () => {
     disc.classList.remove('translate-out')
     disc.classList.add('translate-in')
+    cover.classList.remove('blur-in')
+    cover.classList.add('blur-out')
+    border.forEach((e, i) => e.classList.add('border-animation' + ++i))
     song.play()
 }
 
 const takeOutDisc = () => {
     disc.classList.remove('translate-in')
     disc.classList.add('translate-out')
+    cover.classList.remove('blur-out')
+    cover.classList.add('blur-in')
     song.pause()
 }
 

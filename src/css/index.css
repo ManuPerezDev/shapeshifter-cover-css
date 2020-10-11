@@ -7,10 +7,10 @@
 
 .container {
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    align-items: center;
     width: 1200px;
-    height: 1200px;
+    height: 700px;
     margin: auto;
 }
 
@@ -21,7 +21,120 @@
     z-index: 2;
     display: flex;
     justify-content: center;
-    align-items: center;
+    filter: blur(4px);
+    position: relative;
+    box-shadow: 3px 3px 7px black;
+}
+
+.blur-out {
+    animation: blur-out 3s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes blur-out {
+    0%,
+    25% {
+        filter: blur(3px);
+    }
+    50% {
+        filter: blur(2px);
+    }
+    75% {
+        filter: blur(1px);
+    }
+    100% {
+        filter: blur(0);
+    }
+}
+
+.blur-in {
+    animation: blur-in 3s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes blur-in {
+    0%,
+    25% {
+        filter: blur(1px);
+    }
+    50% {
+        filter: blur(2px);
+    }
+    75% {
+        filter: blur(3px);
+    }
+    100% {
+        filter: blur(4px);
+    }
+}
+
+.border-container {
+    position: relative;
+    top: 10px;
+    left: 1px;
+}
+
+.border {
+    --border-width: calc(var(--disc-width) - 20px);
+    width: var(--border-width);
+    height: 1px;
+    position: absolute;
+    background: linear-gradient(270deg, #f1f1ef 48.9%, #000 49%);
+    background-size: 205%;
+    z-index: 2;
+    opacity: 0;
+    animation-fill-mode: both;
+}
+
+.border.two {
+    left: calc(var(--border-width) - (var(--border-width)) / 2);
+    top: calc(var(--border-width) - (var(--border-width)) / 2);
+    transform: rotate(90deg);
+}
+
+.border.three {
+    position: absolute;
+    top: var(--border-width);
+    transform: rotate(180deg);
+}
+
+.border.four {
+    position: absolute;
+    top: calc(var(--border-width) - (var(--border-width)) / 2);
+    left: calc((var(--border-width) - (var(--border-width)) / 2) * -1); 
+    transform: rotate(270deg);
+}
+
+.border-animation1 {
+    animation: border 6s linear;
+    animation-fill-mode: forwards;
+}
+
+.border-animation2 {
+    animation: border 6s 3s linear;
+    animation-fill-mode: forwards;
+}
+
+.border-animation3 {
+    animation: border 6s 6s linear;
+    animation-fill-mode: forwards;
+}
+
+.border-animation4 {
+    animation: border 6s 9s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes border {
+    0%,
+    50% {
+        background-position: 100%;
+        opacity: 1;
+    }
+    100% {
+        background-position: 0%;
+        opacity: 1;
+    }
 }
 
 .box-container {
@@ -39,7 +152,7 @@
     background-color: #8cb582;
     width: 120px;
     height: 150px;
-    top: -140px;
+    top: 50px;
     left: 37px;
 }
 
@@ -47,7 +160,7 @@
     background-color: #d4795e;
     width: 61px;
     height: 61px;
-    top: 25px;
+    top: 217px;
     left: 63px;
 }
 
@@ -55,7 +168,7 @@
     background-color: #7071a7;
     width: 215px;
     height: 42px;
-    top: -106px;
+    top: 86px;
     left: 118px;
 }
 
@@ -64,7 +177,7 @@
     opacity: 0.2;
     width: 165px;
     height: 125px;
-    top: -35px;
+    top: 156px;
     left: 175px;
 }
 
@@ -72,14 +185,13 @@
     background-color: #887591;
     width: 85px;
     height: 165px;
-    top: -27px;
+    top: 163px;
     left: 220px;
 }
 
-.box-line {
+.info-container {
     width: calc(var(--disc-width) - 18px);
     height: calc(var(--disc-height) - 18px);
-    border: solid 1px;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -132,13 +244,13 @@ p {
     z-index: 1;
 }
 
-.disc.translate-in {
-    transition: transform 2s linear;
+.translate-in {
+    transition: transform 3s linear;
     transform: translateX(calc(var(--disc-width) * -1)) rotate(-80deg);
 }
 
-.disc.translate-out {
-    transition: transform 2s linear;
+.translate-out {
+    transition: transform 3s linear;
     transform: translateX(0) rotate(80deg);
 }
 

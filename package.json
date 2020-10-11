@@ -9,7 +9,8 @@
     "deploy": "gh-pages -d build",
     "clean": "rm -rf dist build .cache",
     "fixcss": "stylelint --fix src/css/index.css --fix",
-    "fixjs": "eslint src/js/index.js --fix"
+    "fixjs": "eslint src/js/index.js --fix",
+    "bnd": "clean && parcel build && deploy"
   },
   "keywords": [],
   "author": "",
