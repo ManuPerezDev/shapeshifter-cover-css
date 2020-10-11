@@ -5,6 +5,6 @@ var e,t=arguments[3];!function(){"use strict";var n=function(){this.init()};n.pr
 },{}],"ck2U":[function(require,module,exports) {
 module.exports="/shapeshifter-cover-css/plastic-brains.67f1d1f4.mp3";
 },{}],"QvaY":[function(require,module,exports) {
-"use strict";var e=require("howler"),s=require("../assets/audio/plastic-brains.mp3"),t=new e.Howl({src:[s]}),a=document.querySelector(".disc"),r=document.querySelector(".cover"),c=function(){a.classList.remove("translate-out"),a.classList.add("translate-in"),t.play()},i=function(){a.classList.remove("translate-in"),a.classList.add("translate-out"),t.pause()};a.addEventListener("click",c),r.addEventListener("click",i);
+"use strict";var e=require("howler"),s=require("../assets/audio/plastic-brains.mp3"),t=new e.Howl({src:[s]}),r=document.querySelector(".disc"),a=document.querySelector(".cover"),i=document.querySelectorAll(".border"),c=function(){r.classList.remove("translate-out"),r.classList.add("translate-in"),a.classList.remove("blur-in"),a.classList.add("blur-out"),i.forEach(function(e,s){return e.classList.add("border-animation"+ ++s)}),t.play()},l=function(){r.classList.remove("translate-in"),r.classList.add("translate-out"),a.classList.remove("blur-out"),a.classList.add("blur-in"),t.pause()};r.addEventListener("click",c),a.addEventListener("click",l);
 },{"howler":"lyKV","../assets/audio/plastic-brains.mp3":"ck2U"}]},{},["QvaY"], null)
-//# sourceMappingURL=/shapeshifter-cover-css/js.6826e4da.js.map
+//# sourceMappingURL=/shapeshifter-cover-css/js.cf705e7d.js.map
