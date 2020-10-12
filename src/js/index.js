@@ -8,6 +8,9 @@ const song = new Howl({
 const disc = document.querySelector('.disc')
 const cover = document.querySelector('.cover')
 const border = document.querySelectorAll('.border')
+const boxes = document.querySelectorAll('.box')
+const discArtist = document.querySelector('#disc-artist')
+const discTitle = document.querySelector('#disc-title')
 
 const insertDisc = () => {
     disc.classList.remove('translate-out')
@@ -15,6 +18,9 @@ const insertDisc = () => {
     cover.classList.remove('blur-in')
     cover.classList.add('blur-out')
     border.forEach((e, i) => e.classList.add('border-animation' + ++i))
+    boxes.forEach((e, i) => e.classList.add('animation-box-' + ++i))
+    discArtist.classList.add('animation-disc-artist')
+    discTitle.classList.add('animation-disc-title')
     song.play()
 }
 
@@ -25,6 +31,7 @@ const takeOutDisc = () => {
     cover.classList.add('blur-in')
     song.pause()
 }
+
 
 disc.addEventListener('click', insertDisc)
 cover.addEventListener('click', takeOutDisc)

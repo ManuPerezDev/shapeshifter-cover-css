@@ -10,7 +10,7 @@
     "clean": "rm -rf dist build .cache",
     "fixcss": "stylelint --fix src/css/index.css --fix",
     "fixjs": "eslint src/js/index.js --fix",
-    "bnd": "clean && parcel build && deploy"
+    "bnd": "rm -rf dist build .cache && parcel build src/index.html -d build --public-url /shapeshifter-cover-css && gh-pages -d build"
   },
   "keywords": [],
   "author": "",
