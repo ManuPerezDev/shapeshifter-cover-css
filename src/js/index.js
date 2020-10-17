@@ -1,4 +1,4 @@
-import { Howl, Howler } from 'howler'
+import { Howl } from 'howler'
 
 const audio = require('../assets/audio/plastic-brains.mp3')
 const song = new Howl({
@@ -32,6 +32,19 @@ const takeOutDisc = () => {
     song.pause()
 }
 
-
 disc.addEventListener('click', insertDisc)
 cover.addEventListener('click', takeOutDisc)
+
+const name = document.querySelector('.band-name')
+const image = document.querySelector('.band-image')
+const description = document.querySelector('.description')
+const web = document.querySelector('.website')
+
+fetch('https://theaudiodb.com/api/v1/json/1/artist.php?i=152082')
+    .then(response => response.json())
+    .then(json => {
+        name.innerHTML = json.artists[0].strArtist
+        image.src = json.artists[0].strArtistThumb
+        description.textContent = json.artists[0].strBiographyEN.substring(0, 780)
+        web.innerHTML = '<a href="https://' + json.artists[0].strWebsite + '">' + json.artists[0].strWebsite + '</a>'
+    })

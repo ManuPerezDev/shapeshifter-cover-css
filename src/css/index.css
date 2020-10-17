@@ -1,17 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 :root {
     --disc-width: 400px;
     --disc-height: 400px;
 }
 
+body {
+    overflow: hidden;
+}
+
 .container {
+    display: flex;
+    margin: 50px;
+}
+
+.band-info {
+    width: 40%;
+    height: 700px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 15px 0;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+    z-index: 5;
+}
+
+.band-name {
+    font-family: 'Oswald', sans-serif;
+    font-style: italic;
+    letter-spacing: 3px;
+    font-size: 30px;
+}
+
+.band-image {
+    width: 400px;
+    height: 400px;
+}
+
+.description {
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    font-size: 15px;
+    text-align: justify;
+}
+
+.container-disc {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1200px;
-    height: 700px;
-    margin: auto;
+    width: 60%;
+    height: 600px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
 .cover {
@@ -22,7 +66,6 @@
     display: flex;
     justify-content: center;
     filter: blur(4px);
-    position: relative;
     box-shadow: 3px 3px 7px black;
 }
 
@@ -85,7 +128,7 @@
 .border.four {
     position: absolute;
     top: calc(var(--border-width) - (var(--border-width)) / 2);
-    left: calc((var(--border-width) - (var(--border-width)) / 2) * -1); 
+    left: calc((var(--border-width) - (var(--border-width)) / 2) * -1);
     transform: rotate(270deg);
 }
 
@@ -128,7 +171,7 @@
 
 .box {
     position: absolute;
-    z-index: 3;
+    z-index: 5;
     opacity: 0.4;
     border-radius: 1%;
 }
@@ -164,7 +207,7 @@
     width: 61px;
     height: 61px;
     top: 217px;
-    left: -550px;
+    left: -900px;
 }
 
 .animation-box-2 {
@@ -174,7 +217,7 @@
 
 @keyframes animation-translate-box-two {
     0%,
-    25% { left: -550px; }
+    25% { left: -900px; }
     50% { left: -200px; }
     75% { left: 0; }
     100% { left: 63px; }
@@ -190,7 +233,7 @@
     width: 215px;
     height: 42px;
     top: 86px;
-    left: -700px;
+    left: -1100px;
 }
 
 .animation-box-3 {
@@ -200,7 +243,7 @@
 
 @keyframes animation-translate-box-three {
     0%,
-    25% { left: -700px; }
+    25% { left: -1100px; }
     50% { left: -350px; }
     75% { left: 0; }
     100% { left: 118px; }
@@ -304,7 +347,7 @@ p {
 
 #disc-title {
     position: relative;
-    left: -750px;
+    left: -1100px;
     top: -1px;
 }
 
@@ -315,7 +358,7 @@ p {
 
 @keyframes animation-disc-title {
     0%,
-    25% { left: -750px; }
+    25% { left: -1100px; }
     50% { left: -325px; }
     75% { left: -100px; }
     100% { left: -56px; }
